@@ -1,0 +1,8 @@
+"entity.credit"[entity.debit != "null"]{
+    enabled:false;
+}
+
+"entity.debit"[entity.credit != "null"]{
+    enabled:false;
+}
+

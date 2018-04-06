@@ -1,0 +1,17 @@
+<folders>
+    <folder id="explorer">
+        <folder id="report" caption="Reports" index="100">            
+            <folder id="check" caption="Cheque Reports" index="100">            
+            </folder>
+        </folder>
+    </folder>
+    
+    <folder id="home">
+        <folder id="check" caption="Cheque" index="100">            
+         </folder>
+ </folder>
+ 
+    
+</folders>
+
+

@@ -1,0 +1,11 @@
+<workunit schemaName="checkrunningbalance">
+    <invokers>
+        <invoker type="checkrunningbalance:create" caption="Account Balances" action="create" role="CHECKBYFUND"/>
+        <invoker type="checkrunningbalance:open" caption="Account Balances" action="open" role="CHECKBYFUND"/>
+        
+    </invokers>
+    <code class="test.checks.controllers.RBController" />
+    <pages>
+        <page template="test.checks.pages.RBPage" />
+    </pages>
+</workunit>

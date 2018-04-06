@@ -1,0 +1,56 @@
+<workunit extends="rpt_wtemplates/ReportController.xml" >
+    <invokers>
+        <invoker folderid="/explorer/report/check" action="init" caption="Cheque List by Fund" 
+            target="window" index="1002" role="CHECKBYFUND"/>
+    </invokers>
+    <code>
+
+    <![CDATA[
+
+    import com.rameses.rcp.common.*;
+    import com.rameses.rcp.annotations.*;
+    import com.rameses.osiris2.client.*;
+    import com.rameses.osiris2.reports.*;
+
+    class CheckByFundController extends com.rameses.gov.etracs.rpt.report.AsyncReportController
+    {
+        @Service('TestchequedataentryReportService') 
+        def svc 
+
+        String title = 'Cheque List by Fund'
+
+        String reportName = 'test/checks/reports/checkbyfund.jasper';
+
+        void buildReportData(entity, asyncHandler){
+            svc.getCheckbyFund(entity, asyncHandler)
+        }
+        
+        Map getParameters(){
+            return data.parameters;
+        }
+
+        def getTransmittalnum(){
+            def c = svc.getTransmittalnum();
+            if(c) return c;
+            return [];
+        }
+        
+        def getCheckacct(){
+            if (! entity.transmittalnum)
+                return [];
+            def c = svc.getCheckaccount(entity?.transmittalnum);
+        }
+        
+        def formControl = [
+            getFormControls: {
+                return [
+                    new FormControl( "combo", [captionWidth:100, caption:'Transmittal ID', name:'entity.transmittalnum', items:'transmittalnum', expression:'#{item.transmittalnum}', preferredSize:'0,21']),
+                    new FormControl( "combo", [captionWidth:100, caption:'Account', name:'entity.checkacct', items:'checkacct', expression:'#{item.checkaccount}', depends:'entity.transmittalnum', dynamic:true, preferredSize:'0,21', emptyText:'ALL'])                 
+                ]    
+            },
+        ] as FormPanelModel;
+    }
+    ]]>        
+        
+    </code>
+</workunit>

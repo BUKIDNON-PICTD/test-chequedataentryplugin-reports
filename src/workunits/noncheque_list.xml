@@ -1,0 +1,5 @@
+<workunit extends="com/rameses/seti2/templates/CrudList.xml" schemaName="checknoncheque" allowDelete = "false">
+    <invokers>
+        <invoker folderid="home/check" caption="Non-Cheque" action="init" role="CHECKBYFUND" />
+    </invokers>
+</workunit>
