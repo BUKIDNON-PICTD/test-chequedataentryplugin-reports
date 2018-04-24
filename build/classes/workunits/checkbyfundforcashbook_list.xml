@@ -2,8 +2,8 @@
     
     <invokers>
         
-       <invoker folderid="/home/check" caption="Input Voucher Number" role="CHECKBYFUND"> </invoker>
-       <invoker folderid="/explorer/report/check" caption="Input Voucher Number" role="CHECKBYFUND"> </invoker>
+       <invoker folderid="/home/check" caption="RJEV/Voucher Number (C)" role="CHECKBYFUND"> </invoker>
+       <invoker folderid="/explorer/report/check" caption="RJEV/Voucher Number (C)" role="CHECKBYFUND"> </invoker>
         
         <invoker type="formActions" action="_close" caption="Close" mnemonic="c" role="CHECKBYFUND"/>       
        <!-- <invoker type="formActions" action="open" caption="Open" mnemonic="o" 

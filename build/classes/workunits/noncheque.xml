@@ -1,4 +1,4 @@
-<workunit schemaName="checknoncheque">
+<!--<workunit schemaName="checknoncheque">
     <invokers>
         <invoker type="checknoncheque:create" caption="Capture Non Cheques" action="create" role="CHECKBYFUND"/>
         <invoker type="checknoncheque:open" caption="Capture Non Cheques" action="open" role="CHECKBYFUND"/>
@@ -8,4 +8,4 @@
     <pages>
         <page template="test.checks.pages.NonChequePage" />
     </pages>
-</workunit>
+</workunit>-->

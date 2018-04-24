@@ -5,7 +5,7 @@ import com.rameses.rcp.common.*;
 import com.rameses.osiris2.common.*;
 import com.rameses.osiris2.client.*;
 
-public class CheckByFundForCashbookController
+public class NonCheckByFundForCashbookController
 {
     @Binding
     def binding;
@@ -17,18 +17,18 @@ public class CheckByFundForCashbookController
     
     def entity;
     
-    String title = 'List of Checks';
+    String title = 'List of NonChecks';
     def selectedCheckitem;
     def checkHandler = [
         fetchList : {
             
             it.searchtext = searchtext;
-            svc.getCheckList(it) },
+            svc.getNonCheckList(it) },
         
         onCommitItem : {
             if(! MsgBox.confirm("Please make sure the information is correct. Continue? ")) return;
                         
-            svc.updateVoucher(it)
+            svc.updateNcVoucherno(it)
             // selectedCheckitem.voucherno << entity.voucherno;
             // isnew : true /////addCouponValidation
             // if(! svc.voucherValidation(it)) {

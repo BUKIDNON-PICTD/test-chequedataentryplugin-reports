@@ -26,17 +26,17 @@ public class CheckByFundForCashbookController
             svc.getCheckList(it) },
         
         onCommitItem : {
-                    if(! MsgBox.confirm("Please make sure the information is correct. Continue? ")) return;
+            if(! MsgBox.confirm("Please make sure the information is correct. Continue? ")) return;
                         
-                        svc.updateVoucher(it)
-                       // selectedCheckitem.voucherno << entity.voucherno;
-                       // isnew : true /////addCouponValidation
-                   // if(! svc.voucherValidation(it)) {
-                     //   MsgBox.alert("Info already exists!")
-                     //   it.voucherno = "";
-                   // }
+            svc.updateVoucher(it)
+            // selectedCheckitem.voucherno << entity.voucherno;
+            // isnew : true /////addCouponValidation
+            // if(! svc.voucherValidation(it)) {
+            //   MsgBox.alert("Info already exists!")
+            //   it.voucherno = "";
+            // }
                                
-                }
+        }
                 
     ] as EditorListModel; //other type: BasicListModel
     
@@ -45,27 +45,27 @@ public class CheckByFundForCashbookController
         
     }
     
-  //  public def create(){
-  //      return Inv.lookupOpener('payorder:create');
-  //  }
+    //  public def create(){
+    //      return Inv.lookupOpener('payorder:create');
+    //  }
     
-   // public def open(){
-     //   return Inv.lookupOpener('payorder:open', [entity:selectedSGAdminPayorderitem]);
-   // }
+    // public def open(){
+    //   return Inv.lookupOpener('payorder:open', [entity:selectedSGAdminPayorderitem]);
+    // }
     
-  //  public void delete(){
-  //      if (MsgBox.confirm('Delete Item?')){
-  //          if(MsgBox.confirm('Are you sure?')){
-  //              if(MsgBox.confirm('Are you really sure?')){
-  //                  svc.delete(selectedItem);
- //                   listHandler.reload();
-  //              }
+    //  public void delete(){
+    //      if (MsgBox.confirm('Delete Item?')){
+    //          if(MsgBox.confirm('Are you sure?')){
+    //              if(MsgBox.confirm('Are you really sure?')){
+    //                  svc.delete(selectedItem);
+    //                   listHandler.reload();
+    //              }
                 
-  //          }
+    //          }
             
-   //     }
+    //     }
         
-  //  }
+    //  }
     
     
     

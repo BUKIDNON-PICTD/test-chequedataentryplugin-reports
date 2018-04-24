@@ -1,0 +1,51 @@
+<workunit extends="rpt_wtemplates/ReportController.xml" >
+    <invokers>
+        <invoker folderid="/home/check" action="init" caption="Cheque Report by Fund" 
+            target="window" index="1002" role="CHECKBYFUND"/>
+    </invokers>
+    <code>
+
+    <![CDATA[
+
+    import com.rameses.rcp.common.*;
+    import com.rameses.rcp.annotations.*;
+    import com.rameses.osiris2.client.*;
+    import com.rameses.osiris2.reports.*;
+
+    class CheckReportByFundController extends com.rameses.gov.etracs.rpt.report.AsyncReportController
+    {
+        @Service('TestchequedataentryReportService') 
+        def svc 
+
+        String title = 'Cheque Report by Fund for Acctng'
+
+        String reportName = 'test/checks/reports/checkreportbyfund.jasper';
+
+        void buildReportData(entity, asyncHandler){
+            svc.getCheckReportbyFund(entity, asyncHandler)
+        }
+        
+        Map getParameters(){
+            return data.parameters;
+        }
+        
+        def getCheckreportacct(){
+             
+            return svc.getCheckReportaccount();
+                           
+        }
+        
+        def formControl = [
+            getFormControls: {
+                return [
+                    new FormControl( "date", [captionWidth:110, caption:'Date From', name:'entity.datefrom', required:true]),
+                    new FormControl( "date", [captionWidth:110, caption:'Date To', name:'entity.dateto', required:true]),
+                    new FormControl( "combo", [captionWidth:110, caption:'Account', name:'entity.checkreportacct', items:'checkreportacct', expression:'#{item.accountname}', dynamic:true, preferredSize:'0,21', allowNull:false])                 
+                ]    
+            },
+        ] as FormPanelModel;
+    }
+    ]]>        
+        
+    </code>
+</workunit>
